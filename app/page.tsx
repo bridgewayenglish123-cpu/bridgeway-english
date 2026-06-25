@@ -205,6 +205,48 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ——— BRIDGEWAY READING ——— */}
+      <section className="section br-section">
+        <div className="container">
+          <div className="br-inner">
+            <Reveal>
+              <div className="br-copy">
+                <span className="label label--light">BRIDGEWAY READING</span>
+                <h2 className="br-title">搭配專屬閱讀平台，<br />讓學習更完整。</h2>
+                <p className="br-desc">
+                  Bridgeway Reading 是我們自製的線上英文閱讀平台，提供分級文章、
+                  詞彙練習與 AI 口說批改。免費註冊，課前課後都能自主練習，
+                  讓每一堂課的效果延伸到日常生活。
+                </p>
+                <div className="br-features">
+                  <div className="br-feat"><span className="br-feat-dot" />分級英文文章，從 A1 到 C1</div>
+                  <div className="br-feat"><span className="br-feat-dot" />詞彙與口說練習，AI 即時批改</div>
+                  <div className="br-feat"><span className="br-feat-dot" />免費註冊，隨時自主練習</div>
+                </div>
+                <a href="https://bridgewayreading.com/articles" target="_blank" rel="noopener noreferrer" className="btn br-btn">
+                  免費使用 Bridgeway Reading →
+                </a>
+              </div>
+            </Reveal>
+            <Reveal delay={150}>
+              <div className="br-visual">
+                <div className="br-card">
+                  <div className="br-card-label">BRIDGEWAY READING</div>
+                  <div className="br-card-title">線上英文閱讀平台</div>
+                  <div className="br-card-items">
+                    <div className="br-card-item"><span className="br-card-dot" /><span>分級文章庫</span></div>
+                    <div className="br-card-item"><span className="br-card-dot" /><span>詞彙練習</span></div>
+                    <div className="br-card-item"><span className="br-card-dot" /><span>AI 口說批改</span></div>
+                    <div className="br-card-item"><span className="br-card-dot" /><span>學習進度追蹤</span></div>
+                  </div>
+                  <div className="br-card-url">bridgewayreading.com</div>
+                </div>
+              </div>
+            </Reveal>
+          </div>
+        </div>
+      </section>
+
       {/* ——— HOW IT WORKS ——— */}
       <section className="section section--alt">
         <div className="container">
@@ -332,6 +374,28 @@ export default function Home() {
         .pricing-item { background: var(--surface); border: 1px solid var(--border); border-radius: var(--r-lg); padding: 32px 28px; box-shadow: var(--shadow-xs); text-align: center; }
         .pricing-item h3 { margin-bottom: 12px; }
         .pricing-item p { font-size: 14.5px; color: var(--text-secondary); line-height: 1.75; }
+
+        /* BRIDGEWAY READING */
+        .br-section { background: var(--navy); }
+        .br-inner { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 64px; align-items: center; }
+        .label--light { color: var(--gold-soft); }
+        .label--light::before { background: var(--gold-soft); }
+        .br-title { color: #fff; font-size: clamp(28px, 3.6vw, 42px); line-height: 1.2; margin-top: 12px; }
+        .br-desc { color: #8b95a8; font-size: 15.5px; line-height: 1.95; margin-top: 18px; max-width: 480px; }
+        .br-features { display: flex; flex-direction: column; gap: 10px; margin-top: 24px; }
+        .br-feat { display: flex; align-items: center; gap: 10px; font-size: 14.5px; color: #b8becb; }
+        .br-feat-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--gold-soft); flex-shrink: 0; }
+        .br-btn { display: inline-flex; align-items: center; margin-top: 32px; background: transparent; border: 1.5px solid rgba(176,141,62,.5); color: var(--gold-soft); border-radius: 99px; padding: 13px 28px; font-size: 15px; font-weight: 600; transition: border-color .2s, background .2s, color .2s; }
+        .br-btn:hover { border-color: var(--gold-soft); background: rgba(176,141,62,.08); color: #d4aa5a; }
+        .br-visual { display: flex; justify-content: center; }
+        .br-card { background: rgba(255,255,255,.04); border: 1px solid rgba(255,255,255,.1); border-radius: 20px; padding: 32px 28px; width: 100%; max-width: 320px; }
+        .br-card-label { font-size: 10px; font-weight: 700; letter-spacing: .1em; color: var(--gold-soft); margin-bottom: 10px; }
+        .br-card-title { font-size: 20px; font-weight: 700; color: #fff; margin-bottom: 24px; line-height: 1.3; }
+        .br-card-items { display: flex; flex-direction: column; gap: 14px; margin-bottom: 28px; }
+        .br-card-item { display: flex; align-items: center; gap: 12px; font-size: 14.5px; color: #b8becb; }
+        .br-card-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--gold-soft); flex-shrink: 0; opacity: 0.7; }
+        .br-card-url { font-size: 12px; color: rgba(255,255,255,.3); border-top: 1px solid rgba(255,255,255,.08); padding-top: 16px; letter-spacing: .04em; }
+        @media (max-width: 940px) { .br-inner { grid-template-columns: 1fr; gap: 40px; } .br-visual { display: none; } }
 
         @media (max-width: 940px) {
           .hero-inner { grid-template-columns: 1fr; gap: 40px; }
