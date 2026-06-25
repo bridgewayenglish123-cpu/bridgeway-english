@@ -205,6 +205,50 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ——— TESTIMONIALS ——— */}
+      <section className="section section--alt">
+        <div className="container">
+          <Reveal>
+            <div className="sh center">
+              <span className="label" style={{ justifyContent: "center" }}>WHAT PARENTS SAY</span>
+              <h2>其他家長怎麼說</h2>
+            </div>
+          </Reveal>
+          <div className="grid g3 tm-grid">
+            {[
+              {
+                quote: "上課內容孩子很喜歡，氣氛輕鬆，聽得懂七八成，很有信心繼續上。",
+                author: "學生家長",
+                tag: "兒童英文"
+              },
+              {
+                quote: "課程進行得很順利，沒什麼問題，老師安排得很好。",
+                author: "成人學員",
+                tag: "成人口說"
+              },
+              {
+                quote: "老師很有耐心，課後也有學習報告，讓我清楚知道孩子的學習狀況。",
+                author: "學生家長",
+                tag: "兒童英文"
+              },
+            ].map((t, i) => (
+              <Reveal key={i} delay={i * 80}>
+                <div className="tm-card">
+                  <div className="tm-quote-mark">"</div>
+                  <p className="tm-quote">{t.quote}</p>
+                  <div className="tm-footer">
+                    <div className="tm-author-info">
+                      <span className="tm-author">{t.author}</span>
+                      <span className="tm-tag">{t.tag}</span>
+                    </div>
+                  </div>
+                </div>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* ——— BRIDGEWAY READING ——— */}
       <section className="section br-section">
         <div className="container">
@@ -374,6 +418,33 @@ export default function Home() {
         .pricing-item { background: var(--surface); border: 1px solid var(--border); border-radius: var(--r-lg); padding: 32px 28px; box-shadow: var(--shadow-xs); text-align: center; }
         .pricing-item h3 { margin-bottom: 12px; }
         .pricing-item p { font-size: 14.5px; color: var(--text-secondary); line-height: 1.75; }
+
+        /* TESTIMONIALS */
+        .tm-grid { align-items: stretch; }
+        .tm-card {
+          background: var(--surface); border: 1px solid var(--border);
+          border-radius: var(--r-lg); padding: 32px 28px;
+          box-shadow: var(--shadow-xs); display: flex; flex-direction: column;
+          height: 100%; transition: box-shadow .3s, border-color .3s;
+        }
+        .tm-card:hover { box-shadow: var(--shadow-sm); border-color: var(--gold-soft); }
+        .tm-quote-mark {
+          font-family: "Fraunces", "Georgia", serif; font-size: 64px;
+          line-height: 0.6; color: var(--gold); opacity: 0.4;
+          margin-bottom: 20px; display: block;
+        }
+        .tm-quote {
+          font-size: 15.5px; color: var(--text); line-height: 1.85;
+          flex: 1; font-style: italic;
+        }
+        .tm-footer {
+          margin-top: 24px; padding-top: 18px;
+          border-top: 1px solid var(--border-fine);
+          display: flex; align-items: center; justify-content: space-between;
+        }
+        .tm-author-info { display: flex; flex-direction: column; gap: 4px; }
+        .tm-author { font-size: 13.5px; font-weight: 600; color: var(--navy); }
+        .tm-tag { font-size: 12px; color: var(--gold); font-weight: 600; }
 
         /* BRIDGEWAY READING */
         .br-section { background: var(--navy); }
