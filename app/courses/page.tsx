@@ -7,7 +7,11 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "課程方向 Courses",
-  description: "Bridgeway English 提供兒童英文、成人口說、閱讀理解、文法寫作、多益雅思托福備考、商業英文課程。線上一對一或小團體。",
+  description: "Bridgeway English 提供兒童英文、成人口說、閱讀理解、文法寫作、多益雅思托福備考、劍橋英檢、高中7000單、國中2000單與商業英文課程。",
+  openGraph: {
+    title: "課程方向｜Bridgeway English",
+    description: "兒童英文、成人口說、考試備考、劍橋英檢、高中7000單、國中2000單、商業英文。精選菲律賓外師，一對一或小團體。",
+  },
 };
 
 export default function Courses() {

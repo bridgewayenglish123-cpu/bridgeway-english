@@ -6,7 +6,11 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "認識老師 Teachers",
-  description: "認識 Bridgeway English 的老師團隊。每位老師都經過篩選，親切、耐心、經驗豐富，特別擅長陪伴學生建立英文口說能力。",
+  description: "認識 Bridgeway English 的精選菲律賓英文教師團隊。每位老師都經過篩選，親切、耐心、經驗豐富，特別擅長陪伴學生建立英文口說能力。",
+  openGraph: {
+    title: "認識老師｜Bridgeway English",
+    description: "精選菲律賓英文教師，口音清晰、親切耐心、教學經驗豐富。依學生需求安排最適合的老師。",
+  },
 };
 
 export default function Teachers() {

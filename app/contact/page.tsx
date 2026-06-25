@@ -1,4 +1,5 @@
 "use client";
+import type { Metadata } from "next";
 import { Reveal } from "@/components/Reveal";
 import { IcLine } from "@/components/Icons";
 import { LINE_URL, social } from "@/lib/data";

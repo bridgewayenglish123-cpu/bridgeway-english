@@ -15,6 +15,8 @@ export const metadata: Metadata = {
     "線上英文課程", "線上英文家教", "菲律賓英文老師", "菲律賓英文家教",
     "兒童英文", "成人英文口說", "商業英文", "IELTS 線上課程",
     "TOEFL 線上課程", "TOEIC 線上課程", "英文口說練習", "線上外師英文",
+    "劍橋英檢", "Cambridge KET", "Cambridge PET", "Cambridge Movers", "Cambridge Flyers",
+    "高中英文7000單", "國中英文2000單", "英文補習", "線上英文補習",
   ],
   openGraph: {
     title: "Bridgeway English｜線上英文口說課程",

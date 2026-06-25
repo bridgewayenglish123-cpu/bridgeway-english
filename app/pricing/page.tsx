@@ -7,7 +7,11 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "課程方案 Pricing",
-  description: "Bridgeway English 課程方案。基礎課程約 NT$250-350 / 堂起，提供一對一與 2-5 人小團體線上英文課程。",
+  description: "Bridgeway English 課程方案。基礎課程約 NT$250-350 / 堂起，試聽 25 分鐘 NT$250，提供一對一與 2-5 人小團體線上英文課程。",
+  openGraph: {
+    title: "課程方案｜Bridgeway English",
+    description: "基礎課程 NT$250–350 / 堂起，試聽 25 分鐘 NT$250。一對一或 2–5 人小團體，彈性堂數，不綁月費。",
+  },
 };
 
 export default function Pricing() {

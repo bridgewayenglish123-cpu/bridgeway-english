@@ -23,12 +23,13 @@ export default function About() {
             <span className="label">ABOUT</span>
             <h1>關於 Bridgeway English</h1>
             <p className="pg-desc">
-              Bridgeway English 是來自台灣的線上英文學習品牌。我們不是隨便媒合老師的平台，
-              而是有規劃、有篩選、有陪伴的線上英文課程。
+              Bridgeway English 是來自台灣的線上英文家教品牌。我們不是隨便媒合老師的平台，
+              而是有規劃、有篩選、有陪伴的精緻線上英文課程。
             </p>
             <p className="pg-desc" style={{ marginTop: 16 }}>
-              我們透過課前了解、試聽評估、課程安排與課後回饋，陪伴學生持續進步。
-              搭配 Bridgeway Reading 文章閱讀練習，幫助學生從讀懂英文進一步練習口說。
+              所有老師皆為精選的優質菲律賓英文教師，經驗豐富、口音清晰、親切耐心。
+              我們透過課前了解、試聽評估、課程安排與課後回饋，依照每位學生的年齡、程度與目標，
+              陪伴他們一步一步建立真正敢開口的英文能力。
             </p>
           </Reveal>
         </div>
@@ -59,19 +60,20 @@ export default function About() {
         <div className="container" style={{ maxWidth: 720 }}>
           <Reveal>
             <span className="label">OUR APPROACH</span>
-            <h2>從閱讀到口說</h2>
+            <h2>我們怎麼做到的</h2>
             <p className="about-prose">
-              閱讀是輸入，口說是輸出。Bridgeway Reading 幫你看懂英文；Bridgeway English 老師
-              陪你把英文說出來。課堂中由老師帶你討論文章內容，練習回答問題與表達想法，
-              並協助修正句子、補充更自然的說法，讓你的英文表達更清楚。
+              每位學生在開始之前，我們都會先了解他的年齡、程度、學習目標與可上課時間，
+              再安排最適合的老師與課程方向。不論是兒童英文、成人口說、考試備考還是商業英文，
+              每一堂課都是為你量身安排的。
             </p>
             <p className="about-prose">
-              我們的老師具有良好英文溝通能力、豐富線上教學經驗，親切耐心，
-              特別適合陪伴學生建立英文口說能力。
+              我們的老師皆為精選的優質菲律賓英文教師，具備豐富的線上教學經驗，
+              親切耐心、口音清晰，特別擅長陪伴學生建立開口說英文的信心。
+              搭配自製的 Bridgeway Reading 詞彙與閱讀教材，讓每堂課都有具體的學習素材與進度。
             </p>
             <blockquote className="about-quote">
-              讀得懂，也要說得出來。
-              <span className="en-accent">Understand what you read. Then learn to talk about it.</span>
+              一步一步，建立真正敢開口的英文能力。
+              <span className="en-accent">Premium online English lessons with quality tutors.</span>
             </blockquote>
           </Reveal>
         </div>
