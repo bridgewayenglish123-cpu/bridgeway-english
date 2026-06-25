@@ -1,6 +1,11 @@
 import Link from "next/link";
 import { LINE_URL, social } from "@/lib/data";
 
+const IcIG = () => <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>;
+const IcFB = () => <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>;
+const IcTh = () => <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 4c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"/></svg>;
+const IcYT = () => <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 0 0-1.95 1.96A29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58A2.78 2.78 0 0 0 3.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.95A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58zM9.75 15.02V8.98L15.5 12l-5.75 3.02z"/></svg>;
+
 export default function Footer() {
   return (
     <footer className="ft">
@@ -12,10 +17,10 @@ export default function Footer() {
               線上外師英文課程，陪你把英文輸入變成口說與實際表達能力。
             </p>
             <div className="ft-social">
-              <a href={social.instagram} target="_blank" rel="noopener noreferrer" aria-label="Instagram">IG</a>
-              <a href={social.facebook} target="_blank" rel="noopener noreferrer" aria-label="Facebook">FB</a>
-              <a href={social.threads} target="_blank" rel="noopener noreferrer" aria-label="Threads">Th</a>
-              <a href={social.youtube} target="_blank" rel="noopener noreferrer" aria-label="YouTube">YT</a>
+              <a href={social.instagram} target="_blank" rel="noopener noreferrer" aria-label="Instagram"><IcIG /></a>
+              <a href={social.facebook} target="_blank" rel="noopener noreferrer" aria-label="Facebook"><IcFB /></a>
+              <a href={social.threads} target="_blank" rel="noopener noreferrer" aria-label="Threads"><IcTh /></a>
+              <a href={social.youtube} target="_blank" rel="noopener noreferrer" aria-label="YouTube"><IcYT /></a>
             </div>
           </div>
 

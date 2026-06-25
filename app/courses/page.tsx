@@ -32,7 +32,6 @@ export default function Courses() {
             <Reveal key={c.id} delay={i * 50}>
               <article className="cr">
                 <div className="cr-left">
-                  <span className="cr-emoji">{c.emoji}</span>
                   <h2>{c.title}</h2>
                 </div>
                 <div className="cr-right">
@@ -79,7 +78,6 @@ export default function Courses() {
           transition: box-shadow .3s, border-color .3s;
         }
         .cr:hover { box-shadow: var(--shadow-md); border-color: var(--gold-soft); }
-        .cr-emoji { font-size: 32px; display: block; margin-bottom: 14px; }
         .cr-left h2 { font-size: clamp(22px, 2.6vw, 28px); }
         .cr-desc { font-size: 15px; color: var(--text-secondary); line-height: 1.75; margin-bottom: 16px; }
         .cr-tags { display: flex; flex-wrap: wrap; gap: 8px; }

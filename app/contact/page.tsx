@@ -1,56 +1,36 @@
 "use client";
-import { useState } from "react";
 import { Reveal } from "@/components/Reveal";
 import { IcLine } from "@/components/Icons";
-import { LINE_URL } from "@/lib/data";
+import { LINE_URL, social } from "@/lib/data";
 
-const courseTypes = ["兒童英文", "成人口說", "閱讀理解", "文法寫作", "多益 / 雅思 / 托福", "商業英文", "團體課程", "還不確定"];
+const FB_URL = "https://www.facebook.com/profile.php?id=61588545042657";
+
+const steps = [
+  { n: "01", title: "告訴我們你的需求", body: "加 LINE 或 FB，告訴我們學生年齡、程度、學習目標與方便上課時間。" },
+  { n: "02", title: "安排適合老師", body: "我們協助安排適合的老師與試聽時間，通常 1–2 個工作天內回覆。" },
+  { n: "03", title: "完成 25 分鐘試聽", body: "透過試聽了解老師教學方式與學生目前程度，並提供學習建議。" },
+  { n: "04", title: "開始正式課程", body: "依照目標安排固定課程，持續練習，穩定累積英文能力。" },
+];
+
+const faqs = [
+  { q: "老師是哪裡人？", a: "我們的老師來自菲律賓，擁有豐富的英文教學經驗，溝通能力強、親切耐心。菲律賓英文教育水準高，老師口音清晰、發音標準。" },
+  { q: "上課用什麼軟體？", a: "主要使用 Zoom 或 Google Meet，方便在電腦、平板或手機上課，不需要額外安裝特殊軟體。" },
+  { q: "試聽課程要收費嗎？", a: "試聽課程為 25 分鐘，費用依老師與課程方向而定。加 LINE 詢問後，我們會說明試聽安排與費用。" },
+  { q: "可以請假或改期嗎？", a: "可以。請在上課前至少 24 小時告知，我們會協助安排補課或調整時間。" },
+  { q: "一定要固定上課時間嗎？", a: "原則上希望固定時段，讓學習更有規律。若有特殊狀況，可彈性協調。" },
+];
 
 export default function Contact() {
-  const [sent, setSent] = useState(false);
-  const [form, setForm] = useState({
-    name: "", age: "", level: "", goal: "", course: courseTypes[0], time: "", contact: "", notes: "",
-  });
-  const set = (k: string, v: string) => setForm(f => ({ ...f, [k]: v }));
-
-  const [error, setError] = useState("");
-
-  const submit = async () => {
-    if (!form.name || !form.contact) {
-      setError("請填寫姓名與聯絡方式");
-      return;
-    }
-    setError("");
-    try {
-      const body = new URLSearchParams({
-        "form-name": "contact",
-        ...form,
-      });
-      const res = await fetch("/", {
-        method: "POST",
-        headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: body.toString(),
-      });
-      if (res.ok) {
-        setSent(true);
-      } else {
-        setError("送出失敗，請直接加 LINE 聯絡我們。");
-      }
-    } catch {
-      setError("送出失敗，請直接加 LINE 聯絡我們。");
-    }
-  };
-
   return (
     <>
       <section className="pg-hero">
         <div className="container">
           <Reveal>
-            <span className="label">BOOK A TRIAL</span>
-            <h1>預約試聽課程</h1>
+            <span className="label">CONTACT</span>
+            <h1>聯絡我們</h1>
             <p className="pg-desc">
-              填寫以下資訊，我們會協助你找到適合的老師與學習方向。
-              也歡迎直接加 LINE 詢問。
+              有任何問題，歡迎直接加 LINE 或 Facebook 聯絡我們。
+              告訴我們學生年齡、程度與學習目標，我們會親自回覆並協助安排。
             </p>
           </Reveal>
         </div>
@@ -59,123 +39,118 @@ export default function Contact() {
       <section className="section ct-section">
         <div className="container ct-grid">
           <Reveal>
-            <div className="ct-form">
-              {sent ? (
-                <div className="ct-ok">
-                  <div className="ct-ok-icon">✓</div>
-                  <h2>已收到你的資訊</h2>
-                  <p>我們會盡快與你聯絡，協助安排試聽課程。</p>
+            <div className="ct-channels">
+              <a href={LINE_URL} target="_blank" rel="noopener noreferrer" className="ct-channel ct-line">
+                <div className="ct-ch-icon">
+                  <IcLine size={28} />
                 </div>
-              ) : (
-                <div className="ct-fields">
-                  <div className="ct-row">
-                    <Fld label="學生姓名" req>
-                      <input value={form.name} onChange={e => set("name", e.target.value)} placeholder="王小明" />
-                    </Fld>
-                    <Fld label="年齡">
-                      <input value={form.age} onChange={e => set("age", e.target.value)} placeholder="8 / 成人" />
-                    </Fld>
-                  </div>
-                  <Fld label="目前英文程度">
-                    <input value={form.level} onChange={e => set("level", e.target.value)} placeholder="初學 / 有基礎 / 進階" />
-                  </Fld>
-                  <Fld label="學習目標">
-                    <input value={form.goal} onChange={e => set("goal", e.target.value)} placeholder="想加強口說 / 準備 IELTS / 學校英文…" />
-                  </Fld>
-                  <Fld label="想上的課程類型">
-                    <select value={form.course} onChange={e => set("course", e.target.value)}>
-                      {courseTypes.map(c => <option key={c}>{c}</option>)}
-                    </select>
-                  </Fld>
-                  <Fld label="可上課時間">
-                    <input value={form.time} onChange={e => set("time", e.target.value)} placeholder="平日晚上 / 週末上午…" />
-                  </Fld>
-                  <Fld label="LINE ID / Email" req>
-                    <input value={form.contact} onChange={e => set("contact", e.target.value)} placeholder="LINE ID 或 Email" />
-                  </Fld>
-                  <Fld label="備註">
-                    <textarea rows={3} value={form.notes} onChange={e => set("notes", e.target.value)} placeholder="任何想讓我們知道的事…" />
-                  </Fld>
-                  {error && <p style={{ color: "#c0392b", fontSize: 14, marginTop: -6 }}>{error}</p>}
-                  <button className="btn btn-primary btn-lg ct-submit" onClick={submit}>
-                    預約試聽課程
-                  </button>
+                <div className="ct-ch-info">
+                  <strong>加 LINE 官方帳號</strong>
+                  <span>最快速的聯絡方式，通常當天回覆</span>
                 </div>
-              )}
+                <span className="ct-ch-arrow">→</span>
+              </a>
+              <a href={FB_URL} target="_blank" rel="noopener noreferrer" className="ct-channel ct-fb">
+                <div className="ct-ch-icon ct-ch-icon--fb">
+                  <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+                  </svg>
+                </div>
+                <div className="ct-ch-info">
+                  <strong>Facebook 訊息</strong>
+                  <span>傳送訊息給我們的 Facebook 專頁</span>
+                </div>
+                <span className="ct-ch-arrow">→</span>
+              </a>
+
+              <div className="ct-note">
+                <p>我們通常在 <strong>1–2 個工作天內</strong>回覆。若有急需，建議優先使用 LINE 聯絡。</p>
+              </div>
             </div>
           </Reveal>
 
           <Reveal delay={120}>
-            <aside className="ct-aside">
-              <div className="ct-card ct-line-card">
-                <h3>想先聊聊也沒問題</h3>
-                <p>直接加入我們的 LINE，告訴我們你的需求，我們會親自回覆。</p>
-                <a href={LINE_URL} target="_blank" rel="noopener noreferrer" className="btn btn-line btn-lg" style={{ marginTop: 16 }}>
-                  <IcLine size={18} /> 加 LINE 詢問
-                </a>
+            <div className="ct-right">
+              <div className="ct-steps-card">
+                <h3>開始的流程</h3>
+                <div className="ct-steps">
+                  {steps.map(s => (
+                    <div key={s.n} className="ct-step">
+                      <span className="ct-step-n">{s.n}</span>
+                      <div>
+                        <strong>{s.title}</strong>
+                        <p>{s.body}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
               </div>
-              <div className="ct-card">
-                <h3>接下來的流程</h3>
-                <ol className="ct-steps">
-                  <li>我們收到資訊後會盡快聯絡</li>
-                  <li>安排一堂 25 分鐘試聽課</li>
-                  <li>試聽後提供學習建議</li>
-                  <li>再決定是否報名正式課程</li>
-                </ol>
-              </div>
-            </aside>
+            </div>
           </Reveal>
+        </div>
+      </section>
+
+      <section className="section section--alt">
+        <div className="container faq-wrap">
+          <Reveal>
+            <div className="sh">
+              <span className="label">FAQ</span>
+              <h2>常見問題</h2>
+            </div>
+          </Reveal>
+          <div className="faq-list">
+            {faqs.map((f, i) => (
+              <Reveal key={i} delay={i * 50}>
+                <div className="faq-item">
+                  <h3>{f.q}</h3>
+                  <p>{f.a}</p>
+                </div>
+              </Reveal>
+            ))}
+          </div>
         </div>
       </section>
 
       <style jsx>{`
         .pg-hero { padding: 72px 0 48px; }
         .pg-desc { font-size: 16px; color: var(--text-secondary); margin-top: 20px; max-width: 520px; line-height: 1.95; }
-        .ct-grid { display: grid; grid-template-columns: 1.4fr 1fr; gap: 36px; align-items: start; }
-        .ct-form { background: var(--surface); border: 1px solid var(--border); border-radius: var(--r-lg); padding: 36px 32px; box-shadow: var(--shadow-xs); }
-        .ct-fields { display: flex; flex-direction: column; gap: 18px; }
-        .ct-row { display: grid; grid-template-columns: 1.4fr 1fr; gap: 14px; }
-        .ct-submit { width: 100%; margin-top: 6px; }
-        .ct-ok { text-align: center; padding: 28px 10px; }
-        .ct-ok-icon { width: 56px; height: 56px; border-radius: 50%; background: var(--gold-bg); color: var(--gold); display: flex; align-items: center; justify-content: center; font-size: 28px; margin: 0 auto 18px; border: 1.5px solid var(--gold-soft); }
-        .ct-ok h2 { font-size: 22px; }
-        .ct-ok p { color: var(--text-secondary); margin-top: 12px; }
-        .ct-aside { display: flex; flex-direction: column; gap: 18px; }
-        .ct-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--r); padding: 26px 24px; box-shadow: var(--shadow-xs); }
-        .ct-card h3 { font-size: 18px; margin-bottom: 10px; }
-        .ct-card p { font-size: 14.5px; color: var(--text-secondary); line-height: 1.75; }
-        .ct-line-card { background: var(--navy); border-color: var(--navy); }
-        .ct-line-card h3 { color: #fff; }
-        .ct-line-card p { color: #9aa4b8; }
-        .ct-steps { padding-left: 20px; display: grid; gap: 10px; list-style: decimal; }
-        .ct-steps li { font-size: 14.5px; color: var(--text-secondary); }
-        .ct-steps li::marker { color: var(--gold); font-weight: 700; }
+        .ct-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: start; }
+        .ct-channels { display: flex; flex-direction: column; gap: 14px; }
+        .ct-channel {
+          display: flex; align-items: center; gap: 18px;
+          background: var(--surface); border: 1.5px solid var(--border);
+          border-radius: var(--r-lg); padding: 22px 24px;
+          box-shadow: var(--shadow-xs); transition: border-color .2s, box-shadow .2s, transform .2s;
+          text-decoration: none;
+        }
+        .ct-channel:hover { border-color: var(--gold); box-shadow: var(--shadow-sm); transform: translateY(-2px); }
+        .ct-ch-icon {
+          width: 52px; height: 52px; border-radius: 14px;
+          background: #06C755; color: #fff;
+          display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+        }
+        .ct-ch-icon--fb { background: #1877F2; }
+        .ct-ch-info { flex: 1; }
+        .ct-ch-info strong { display: block; font-size: 16px; color: var(--navy); margin-bottom: 4px; }
+        .ct-ch-info span { font-size: 13.5px; color: var(--text-secondary); }
+        .ct-ch-arrow { font-size: 18px; color: var(--gold); font-weight: 600; flex-shrink: 0; }
+        .ct-note { background: var(--bg-alt); border-radius: var(--r); padding: 16px 20px; margin-top: 4px; }
+        .ct-note p { font-size: 14px; color: var(--text-secondary); line-height: 1.7; }
+        .ct-note strong { color: var(--navy); }
+        .ct-steps-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--r-lg); padding: 28px 26px; box-shadow: var(--shadow-xs); }
+        .ct-steps-card h3 { font-size: 18px; margin-bottom: 22px; color: var(--navy); }
+        .ct-steps { display: flex; flex-direction: column; gap: 20px; }
+        .ct-step { display: flex; gap: 16px; align-items: flex-start; }
+        .ct-step-n { font-size: 11px; font-weight: 700; color: var(--gold); background: var(--gold-bg); border: 1px solid rgba(184,149,62,.2); border-radius: 6px; padding: 3px 7px; flex-shrink: 0; margin-top: 3px; letter-spacing: .04em; }
+        .ct-step strong { display: block; font-size: 14.5px; color: var(--navy); margin-bottom: 4px; }
+        .ct-step p { font-size: 13.5px; color: var(--text-secondary); line-height: 1.65; }
+        .faq-wrap { max-width: 740px; }
+        .faq-list { display: flex; flex-direction: column; gap: 14px; margin-top: 36px; }
+        .faq-item { background: var(--surface); border: 1px solid var(--border); border-radius: var(--r); padding: 22px 24px; box-shadow: var(--shadow-xs); }
+        .faq-item h3 { font-size: 16px; color: var(--navy); margin-bottom: 10px; }
+        .faq-item p { font-size: 14.5px; color: var(--text-secondary); line-height: 1.75; }
         @media (max-width: 820px) { .ct-grid { grid-template-columns: 1fr; } }
-        @media (max-width: 480px) { .ct-row { grid-template-columns: 1fr; } .ct-form { padding: 28px 22px; } }
       `}</style>
     </>
-  );
-}
-
-function Fld({ label, req, children }: { label: string; req?: boolean; children: React.ReactNode }) {
-  return (
-    <label className="fld">
-      <span className="fld-label">{label}{req && <i> *</i>}</span>
-      {children}
-      <style jsx>{`
-        .fld { display: flex; flex-direction: column; gap: 7px; }
-        .fld-label { font-size: 13px; font-weight: 600; color: var(--navy); }
-        .fld-label i { color: var(--gold); font-style: normal; }
-        .fld :global(input), .fld :global(select), .fld :global(textarea) {
-          font-family: inherit; font-size: 15px; color: var(--text);
-          background: var(--bg); border: 1.5px solid var(--border); border-radius: 10px;
-          padding: 12px 14px; width: 100%; transition: border-color .2s, background .2s; resize: vertical;
-        }
-        .fld :global(input:focus), .fld :global(select:focus), .fld :global(textarea:focus) {
-          outline: none; border-color: var(--gold); background: var(--surface);
-        }
-        .fld :global(::placeholder) { color: #b0b4bd; }
-      `}</style>
-    </label>
   );
 }

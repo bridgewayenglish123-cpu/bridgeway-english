@@ -10,6 +10,7 @@ const nav = [
   { href: "/courses", label: "課程方向" },
   { href: "/teachers", label: "認識老師" },
   { href: "/pricing", label: "課程方案" },
+  { href: "/contact", label: "聯絡我們" },
 ];
 
 export default function Header() {
@@ -79,10 +80,10 @@ export default function Header() {
           color: var(--navy); letter-spacing: -0.02em; margin-right: auto;
         }
         .hd-brand span { font-weight: 400; font-style: italic; color: var(--text-secondary); }
-        .hd-nav { display: flex; gap: 2px; }
+        .hd-nav { display: flex; gap: 4px; }
         .hd-link {
           font-size: 14.5px; font-weight: 500; color: var(--text-secondary);
-          padding: 7px 14px; border-radius: 99px; transition: color .2s, background .2s;
+          padding: 7px 16px; border-radius: 99px; transition: color .2s, background .2s;
         }
         .hd-link:hover { color: var(--navy); }
         .hd-link.active { color: var(--navy); background: var(--bg-warm); }

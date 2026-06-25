@@ -27,14 +27,12 @@ export default function Home() {
           <Reveal>
             <div className="hero-copy">
               <span className="label">BRIDGEWAY ENGLISH</span>
-              <h1>讀得懂，<br />也要說得出來。</h1>
-              <p className="hero-en en-accent">
-                Understand what you read. Then learn to talk about it.
-              </p>
+              <h1>一步一步，<br />建立真正敢開口的<br />英文能力。</h1>
+              <p className="hero-en en-accent">Premium online English lessons with quality tutors.</p>
               <p className="hero-desc">
-                Bridgeway English 是線上外師英文課程，陪你把閱讀理解變成英文口說與實際表達能力。
-                你可以先用 Bridgeway Reading 免費練習閱讀；想進一步練口說，老師可以帶你討論文章、
-                整理想法、練習回答問題，並修正你的英文表達。
+                Bridgeway English 提供高品質線上英文家教課程，依照學生年齡、程度與目標，
+                安排適合的老師與課程方向。小規模教學，精選師資，
+                一對一或 2–5 人小團體，陪你一步一步建立真正敢開口的英文能力。
               </p>
               <div className="hero-meta">
                 <span>小規模教學</span>
@@ -82,17 +80,17 @@ export default function Home() {
           </Reveal>
           <div className="grid g3 pain-grid">
             {[
-              { emoji: "📖", text: "看得懂英文文章，但要開口時不知道怎麼說" },
-              { emoji: "💬", text: "背過很多單字，但聊天時用不出來" },
-              { emoji: "🧒", text: "孩子學了英文，卻不太敢開口回答" },
-              { emoji: "📅", text: "上過英文課，卻缺少穩定的練習方式" },
-              { emoji: "🤔", text: "想練口說，但不知道該聊什麼主題" },
-              { emoji: "🎯", text: "想準備多益、雅思、托福，但需要老師協助整理方向" },
-            ].map((p, i) => (
+              "看得懂英文文章，但要開口時不知道怎麼說",
+              "背過很多單字，但聊天時用不出來",
+              "孩子學了英文，卻不太敢開口回答",
+              "上過英文課，卻缺少穩定的練習方式",
+              "想練口說，但不知道該聊什麼主題",
+              "想準備多益、雅思、托福，但需要老師協助整理方向",
+            ].map((text, i) => (
               <Reveal key={i} delay={i * 60}>
                 <div className="pain-card">
-                  <span className="pain-emoji">{p.emoji}</span>
-                  <p>{p.text}</p>
+                  <span className="pain-num">{String(i + 1).padStart(2, "0")}</span>
+                  <p>{text}</p>
                 </div>
               </Reveal>
             ))}
@@ -142,7 +140,6 @@ export default function Home() {
             {courses.map((c, i) => (
               <Reveal key={c.id} delay={i * 60}>
                 <div className="card course-card">
-                  <span className="cc-emoji">{c.emoji}</span>
                   <h3>{c.title}</h3>
                   <p className="cc-desc">{c.desc}</p>
                   <div className="cc-tags">
@@ -291,8 +288,8 @@ export default function Home() {
         .ht-more { display: inline-flex; align-items: center; gap: 6px; font-size: 14px; font-weight: 600; color: var(--gold); padding-left: 4px; }
 
         /* PAIN */
-        .pain-card { display: flex; align-items: flex-start; gap: 14px; background: var(--surface); border: 1px solid var(--border); border-radius: var(--r); padding: 22px 20px; box-shadow: var(--shadow-xs); }
-        .pain-emoji { font-size: 22px; flex-shrink: 0; margin-top: 1px; }
+        .pain-card { display: flex; align-items: flex-start; gap: 16px; background: var(--surface); border: 1px solid var(--border); border-radius: var(--r); padding: 22px 20px; box-shadow: var(--shadow-xs); }
+        .pain-num { font-size: 11px; font-weight: 700; color: var(--gold); background: var(--gold-bg); border: 1px solid rgba(184,149,62,.2); border-radius: 6px; padding: 3px 7px; flex-shrink: 0; margin-top: 2px; letter-spacing: .04em; }
         .pain-card p { font-size: 15px; color: var(--text); line-height: 1.7; }
         .pain-bottom { text-align: center; font-size: 16px; color: var(--text-secondary); margin-top: 36px; max-width: 580px; margin-left: auto; margin-right: auto; line-height: 1.85; }
 
@@ -303,7 +300,6 @@ export default function Home() {
         .why-card p { font-size: 14.5px; color: var(--text-secondary); line-height: 1.8; }
 
         /* COURSES */
-        .cc-emoji { font-size: 28px; display: block; margin-bottom: 14px; }
         .cc-desc { font-size: 14.5px; color: var(--text-secondary); margin: 8px 0 16px; line-height: 1.7; }
         .cc-tags { display: flex; flex-wrap: wrap; gap: 7px; }
 

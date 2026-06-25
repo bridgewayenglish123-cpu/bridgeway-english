@@ -36,6 +36,18 @@ export const teachers: Teacher[] = [
     isLead: true,
   },
   {
+    slug: "meya",
+    name: "Meya",
+    role: "英文老師",
+    tagline: "親切互動 × 自信建立",
+    tags: ["Kids English", "Teen Learners", "Beginner Speaking", "Confidence Building", "Phonics"],
+    style: "親切、有活力、鼓勵性強、互動豐富。",
+    availability: "平日晚上 7:00 後與部分週末",
+    photoUrl: "https://bridgewayreading.com/_next/image?url=%2Fimages%2Fteachers%2Fmeya.jpg&w=640&q=75",
+    youtubeUrl: "https://youtu.be/UTuvQF7JERE?si=sL2_rHT7g3J0kAYg",
+    initials: "M",
+  },
+  {
     slug: "laiza",
     name: "Laiza",
     role: "英文老師",
@@ -58,18 +70,6 @@ export const teachers: Teacher[] = [
     photoUrl: "https://bridgewayreading.com/_next/image?url=%2Fimages%2Fteachers%2Fjane.jpg&w=640&q=75",
     youtubeUrl: "https://youtu.be/AeGUTK-MOgc?si=rJgk71xCB2PcgtwF",
     initials: "J",
-  },
-  {
-    slug: "meya",
-    name: "Meya",
-    role: "英文老師",
-    tagline: "親切互動 × 自信建立",
-    tags: ["Kids English", "Teen Learners", "Beginner Speaking", "Confidence Building", "Phonics"],
-    style: "親切、有活力、鼓勵性強、互動豐富。",
-    availability: "平日晚上 7:00 後與部分週末",
-    photoUrl: "https://bridgewayreading.com/_next/image?url=%2Fimages%2Fteachers%2Fmeya.jpg&w=640&q=75",
-    youtubeUrl: "https://youtu.be/UTuvQF7JERE?si=sL2_rHT7g3J0kAYg",
-    initials: "M",
   },
 ];
 
@@ -111,5 +111,15 @@ export const courses: Course[] = [
     id: "business", emoji: "💼", title: "商業英文",
     desc: "練習英文簡報、面試、會議與職場溝通。",
     contents: ["商業會話", "面試英文", "簡報英文", "會議溝通", "外商英文"],
+  },
+  {
+    id: "senior-vocab", emoji: "", title: "高中英文 7000 單實際應用",
+    desc: "以台灣大考中心 7000 單為核心，搭配 Bridgeway Reading 教材，讓單字真正用在口說與表達上。",
+    contents: ["大考核心詞彙", "語境記憶法", "口說實際應用", "搭配 Bridgeway Reading", "考試與表達兼顧"],
+  },
+  {
+    id: "junior-vocab", emoji: "", title: "國中英文 2000 單實際應用",
+    desc: "以國中課綱核心詞彙為基礎，用真實情境與口說練習，讓學生真正記住並敢開口說。",
+    contents: ["國中核心詞彙", "情境記憶法", "基礎句型應用", "口說信心建立", "升高中銜接"],
   },
 ];
