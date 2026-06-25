@@ -4,7 +4,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://bridgewayenglish.com"),
+  metadataBase: new URL("https://bridgewayenglish.net"),
   title: {
     default: "Bridgeway English｜線上英文口說課程｜兒童英文、成人英文、多益雅思托福",
     template: "%s｜Bridgeway English",
