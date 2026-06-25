@@ -7,7 +7,7 @@ import { IcShield, IcCompass, IcSpeak, IcHeart, IcArrow, IcLine, IcPlay } from "
 const why = [
   { Icon: IcShield, title: "精選師資", body: "每位老師都經過篩選，重視教學經驗、溝通能力與耐心陪伴。不需要擔心老師品質不穩定。" },
   { Icon: IcCompass, title: "依需求安排", body: "依照學生年齡、程度、目標與學習狀況，安排適合的老師與課程方向。" },
-  { Icon: IcSpeak, title: "從讀懂到說出來", body: "搭配 Bridgeway Reading 文章練習，把閱讀理解變成英文口說與實際表達能力。" },
+  { Icon: IcSpeak, title: "搭配專屬教材", body: "搭配自製 Bridgeway Reading 平台與詞彙教材，讓學習有系統、有目標，從輸入到真正開口說出來。" },
   { Icon: IcHeart, title: "穩定陪伴", body: "提供課程安排、學習建議與課後回饋，讓學習不只是上課，而是持續的累積。" },
 ];
 
@@ -282,7 +282,7 @@ export default function Home() {
         .hero-teachers { display: flex; flex-direction: column; gap: 14px; }
         .ht-card { display: flex; align-items: center; gap: 16px; background: var(--surface); border: 1px solid var(--border); border-radius: var(--r); padding: 16px 20px; box-shadow: var(--shadow-xs); transition: transform .3s, box-shadow .3s; }
         .ht-card:hover { transform: translateX(4px); box-shadow: var(--shadow-sm); }
-        .ht-photo { width: 54px; height: 54px; border-radius: 13px; object-fit: cover; flex-shrink: 0; }
+        .ht-photo { width: 54px; height: 54px; border-radius: 13px; object-fit: cover; object-position: top center; flex-shrink: 0; }
         .ht-info strong { display: block; font-size: 16px; color: var(--navy); }
         .ht-info span { font-size: 13px; color: var(--text-secondary); }
         .ht-more { display: inline-flex; align-items: center; gap: 6px; font-size: 14px; font-weight: 600; color: var(--gold); padding-left: 4px; }
@@ -306,7 +306,7 @@ export default function Home() {
         /* TEACHERS */
         .tc { display: flex; flex-direction: column; }
         .tc-top { display: flex; gap: 18px; align-items: center; margin-bottom: 16px; }
-        .tc-photo { width: 72px; height: 72px; border-radius: 17px; object-fit: cover; flex-shrink: 0; border: 2px solid var(--border-light); }
+        .tc-photo { width: 72px; height: 72px; border-radius: 17px; object-fit: cover; object-position: top center; flex-shrink: 0; border: 2px solid var(--border-light); }
         .tc-badge { font-size: 11px; font-weight: 700; color: var(--gold); background: var(--gold-bg); border-radius: 99px; padding: 3px 10px; display: inline-block; margin-bottom: 4px; }
         .tc-role { display: block; font-size: 13px; color: var(--text-muted); margin-top: 2px; }
         .tc-tagline { display: block; font-size: 13.5px; color: var(--gold); font-weight: 600; margin-top: 4px; }
@@ -323,7 +323,7 @@ export default function Home() {
         /* STEPS */
         .step { position: relative; padding-top: 10px; }
         .step::before { content: ""; position: absolute; top: 0; left: 0; width: 32px; height: 2px; background: var(--gold-soft); }
-        .step-n { font-family: "Fraunces", serif; font-size: 42px; font-weight: 400; color: var(--bg-deep); display: block; margin: 10px 0 8px; }
+        .step-n { font-family: "Fraunces", "Georgia", serif; font-size: 42px; font-weight: 400; color: rgba(26,39,68,0.12); display: block; margin: 10px 0 8px; letter-spacing: -0.02em; }
         .step h3 { margin-bottom: 8px; }
         .step p { font-size: 14.5px; color: var(--text-secondary); line-height: 1.7; }
 

@@ -34,7 +34,7 @@ export default function Footer() {
 
           <div className="ft-col">
             <h4>開始學習</h4>
-            <Link href="/contact">預約試聽</Link>
+            <Link href="/contact">聯絡我們</Link>
             <a href={LINE_URL} target="_blank" rel="noopener noreferrer">加 LINE 詢問</a>
             <a href="https://bridgewayreading.com/articles" target="_blank" rel="noopener noreferrer">
               Bridgeway Reading

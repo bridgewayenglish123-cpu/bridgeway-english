@@ -89,7 +89,7 @@ export default function Teachers() {
           transition: box-shadow .3s, border-color .3s;
         }
         .tf:hover { box-shadow: var(--shadow-md); border-color: var(--gold-soft); }
-        .tf-photo { width: 100%; aspect-ratio: 1; border-radius: 16px; object-fit: cover; border: 2px solid var(--border-light); }
+        .tf-photo { width: 100%; aspect-ratio: 3/4; border-radius: 16px; object-fit: cover; object-position: top center; border: 2px solid var(--border-light); }
         .tf-yt {
           display: flex; align-items: center; justify-content: center; gap: 7px;
           margin-top: 14px; font-size: 13.5px; font-weight: 600; color: var(--text-secondary);

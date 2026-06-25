@@ -103,9 +103,9 @@ export const courses: Course[] = [
     contents: ["文法基礎", "句子結構", "寫作練習", "錯誤修正", "表達精確度"],
   },
   {
-    id: "test", emoji: "🎓", title: "多益 / 雅思 / 托福",
-    desc: "依照考試目標加強閱讀、口說、寫作與應試能力。",
-    contents: ["IELTS", "TOEFL", "TOEIC", "Cambridge KET / PET", "應試策略"],
+    id: "test", emoji: "🎓", title: "英檢 / 國際考試備考",
+    desc: "依照考試目標加強閱讀、口說、寫作與應試能力，涵蓋多益、雅思、托福與劍橋兒童及青少年英檢。",
+    contents: ["IELTS", "TOEFL", "TOEIC", "Cambridge KET / PET", "Cambridge Movers / Flyers", "應試策略"],
   },
   {
     id: "business", emoji: "💼", title: "商業英文",
